@@ -17,14 +17,28 @@
                     <view key="view" contentMode="scaleToFill" id="I0Q-LS-VJe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CW5-14-Lyb">
+                                <rect key="frame" x="0.0" y="20" width="414" height="667"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CW5-14-Lyb" firstAttribute="trailing" secondItem="C7n-ox-1pI" secondAttribute="trailing" id="Tr1-eF-bkU"/>
+                            <constraint firstItem="CW5-14-Lyb" firstAttribute="top" secondItem="C7n-ox-1pI" secondAttribute="top" id="iW7-tq-KTM"/>
+                            <constraint firstItem="CW5-14-Lyb" firstAttribute="leading" secondItem="C7n-ox-1pI" secondAttribute="leading" id="m6K-Ll-IMu"/>
+                            <constraint firstItem="C7n-ox-1pI" firstAttribute="bottom" secondItem="CW5-14-Lyb" secondAttribute="bottom" id="nOk-OD-C4G"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="C7n-ox-1pI"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="ubM-2T-cjt"/>
+                    <connections>
+                        <outlet property="scroll" destination="CW5-14-Lyb" id="6vL-5t-Xac"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Bn-GN-tZl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438" y="245"/>
+            <point key="canvasLocation" x="437.68115942028987" y="244.56521739130437"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="75W-9H-dKw">
