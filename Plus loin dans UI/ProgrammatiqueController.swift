@@ -13,6 +13,7 @@ class ProgrammatiqueController: UIViewController {
     var monPremierUIView: UIView?
     var monPremierLabel: UILabel?
     var monPremierBouton: UIButton?
+    var maPremierIV: UIImageView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class ProgrammatiqueController: UIViewController {
         monPremierLabel?.textAlignment = .center
         view.addSubview(monPremierLabel!)
         
-        let rectDeMonBouton = CGRect(x: view.frame.width / 2 - 75, y: monPremierLabel!.frame.maxY + 20, width: 150, height: 40)
+        let rectDeMonBouton = CGRect(x: (view.frame.width / 2) - 75, y: monPremierLabel!.frame.maxY + 180, width: 150, height: 40)
         monPremierBouton = UIButton(frame: rectDeMonBouton)
         monPremierBouton?.setTitle("Appuyer", for: UIControlState.normal)
         monPremierBouton?.tintColor = UIColor.red
@@ -40,11 +41,29 @@ class ProgrammatiqueController: UIViewController {
         monPremierBouton?.layer.borderWidth = 2
         view.addSubview(monPremierBouton!)
         
+        
         monPremierBouton?.addTarget(self, action: #selector(boutonAppuyer), for: .touchUpInside)
         
+        let largeur = view.frame.width - 60
+        let rectIC = CGRect(x: 30, y: (view.frame.height / 2) - (largeur / 2), width: largeur, height: largeur)
+        maPremierIV = UIImageView(frame: rectIC)
+        maPremierIV?.image = UIImage(named: "codabee")
+        maPremierIV?.contentMode = .scaleToFill
+        maPremierIV?.clipsToBounds = true
+        maPremierIV?.layer.cornerRadius = maPremierIV!.frame.width / 2
+        view.addSubview(maPremierIV!)
+        
+        view.bringSubview(toFront: monPremierBouton!)
+        
+        maPremierIV?.isUserInteractionEnabled = true
+        maPremierIV?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageAppuyer)))
     }
     
-    @objc func boutonAppuyer () {
+    @objc func imageAppuyer() {
+        print("Image touché !")
+    }
+    
+    @objc func boutonAppuyer() {
         print("Bouton appuyer !")
     }
     
